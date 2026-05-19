@@ -1,0 +1,64 @@
+{
+  "name": "Reservation",
+  "type": "object",
+  "properties": {
+    "guest_name": {
+      "type": "string",
+      "description": "Name of the guest"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Contact phone number"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email address"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Reservation date"
+    },
+    "time": {
+      "type": "string",
+      "description": "Reservation time"
+    },
+    "guests": {
+      "type": "number",
+      "description": "Number of guests"
+    },
+    "occasion": {
+      "type": "string",
+      "enum": [
+        "casual_dining",
+        "birthday",
+        "anniversary",
+        "business",
+        "family_gathering",
+        "other"
+      ],
+      "description": "Occasion for the visit"
+    },
+    "special_requests": {
+      "type": "string",
+      "description": "Any special requests"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "confirmed",
+        "cancelled"
+      ],
+      "default": "pending",
+      "description": "Reservation status"
+    }
+  },
+  "required": [
+    "guest_name",
+    "phone",
+    "date",
+    "time",
+    "guests"
+  ]
+}
